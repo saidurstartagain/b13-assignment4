@@ -9,3 +9,13 @@ const totalJob = document.getElementById("total-job");
 const totalJob2 = document.getElementById("total-job-2");
 
 
+
+const totalInterview = document.getElementById("interview-job");
+const totalRejected = document.getElementById("rejected-job");
+// console.log(totalInterview)
+// console.log(totalRejected)
+const allCards = document.getElementById("all-cards");
+
+// console.log(totalJob, totalInterview, totalRejected)
+
+// 
