@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+
+
+</head>
+
+<body class="bg-blue-100">
+    <header class="w-[80%] mx-auto pt-6 mb-6">
+        <h2 class="text-black-400 text-4xl font-bold ">Job Application Tracker</h2>
+        <div class="grid grid-cols-3 mt-6 gap-5">
+            <div class="bg-white px-5 py-3 ">
+                <p>Total</p>
+                <p id="total-job" class="text-black text-3xl">8</p>
+            </div>
+            <div class="bg-white px-5 py-3  ">
+                <p>Interview</p>
+                <p id="interview-job" class="text-green-600 text-3xl">0</p>
+            </div>
+            <div class="bg-white px-5 py-3">
+                <p>Rejected</p>
+                <p id="rejected-job" class="text-red-600 text-3xl">0</p>
+            </div>
+        </div>
+        <div class="mt-9 text-gray-700">
+            <hr>
+        </div>
+    </header>
+
+
+
+
+
+    <!-- Main section -->
+    <main class="w-[80%] mx-auto mt-6">
+
+        <!-- Head of Main section -->
+
+        <div>
+            <div class="flex justify-between">
+                <h3 class="text-3xl font-bold">Available Jobs</h3>
+
+                <p class="text-3xl"><span id="total-job-2">8</span> Jobs</p>
+            </div>
+            <div class="mt-3">
+                <button onclick="toggleStyle('btn-all-toggle')" id="btn-all-toggle"
+                    class="bg-blue-600 text-white py-2 px-9">All</button>
+                <button onclick="toggleStyle('btn-interview-toggle')" id="btn-interview-toggle"
+                    class="bg-white py-2 px-9">Interview</button>
+                <button onclick="toggleStyle('btn-rejected-toggle')" id="btn-rejected-toggle"
+                    class="bg-white py-2 px-9">Rejected</button>
+            </div>
+        </div>
+
+
+        <!-- Filtered card -->
+
+        <section class="hidden" id="filtered-section">
+
+        </section>
+
+        <!-- Empty section  -->
+        <!-- <div class="flex justify-center"> -->
+        <div id="empty-section" class="bg-white py-9 px-9 mt-6 hidden flex justify-center flex-col text-center">
+            <img class=" w-[15%] mx-auto" src="jobs.png" alt="">
+            <p class="text-3xl font-bold">No jobs available</p>
+            <p class="mt-1">Check back soon for new job opportunities</p>
+        </div>
+        <!-- </div> -->
+        <!-- Empty section  -->
+
+
+        <div class="" id="all-cards">
+
+
+
+
+            <!-- Main section part 1 -->
+            <div id="eSection" class="bg-white py-9 px-9 mt-6">
+                <div class="mb-3 flex justify-between ">
+                    <div>
+                        <p class=" mobileFast text-3xl font-bold">Mobile First Corp</p>
+                        <p class="reactNative">React Native Developer</p>
+                    </div>
+                    <div><i id="sectionDelete" class="fa-solid fa-trash-can hover:text-red-400 "></i></div>
+                </div>
+                <div class="mb-3">
+                    <p class="remoteFull">Remote • Full-time • $130,000 - $175,000 </p>
+                </div>
+                <div class="mb-3">
+                    <button id="btn-apply" class=" status-btn bg-amber-200 py-2 px-2 mb-2 font-medium">Not
+                        Applied</button>
+                    <p class="build">Build cross-platform mobile applications using React Native. Work on products used
+                        by millions of
+                        users
+                        worldwide.</p>
+                </div>
+                <div>
+                    <button id="btn-interview"
+                        class=" btn-interview bg-white border-2 text-green-600 py-2 px-4 mr-2 btn-interview">interview</button>
+                    <button id="btn-rejected"
+                        class=" btn-rejected bg-white border-2 text-red-600 py-2 px-4">Rejected</button>
+                </div>
+            </div>
+
+            <!-- Main section part 2 -->
+            <div id="eSection" class="bg-white py-9 px-9 mt-6">
+                <div class="mb-3 flex justify-between ">
+                    <div>
+                        <p class=" mobileFast text-3xl font-bold">WebFlow Agency</p>
+                        <p class="reactNative">Web Designer & Developer</p>
+                    </div>
+                    <div><i id="sectionDelete" class="fa-solid fa-trash-can hover:text-red-400 "></i></div>
+                </div>
+                <div class="mb-3">
+                    <p class="remoteFull">Los Angeles, CA
+                        •
+                        Part-time
+                        •
+                        $80,000 - $120,000</p>
+                </div>
+                <div class="mb-3">
+                    <button id="btn-apply" class=" status-btn bg-amber-200 py-2 px-2 mb-2 font-medium">Not
+                        Applied</button>
+                    <p class="build">Create stunning web experiences for high-profile clients. Must have portfolio and
+                        experience with modern web design trends.</p>
+                </div>
+                <div>
+                    <button id="btn-interview"
+                        class=" btn-interview bg-white border-2 text-green-600 py-2 px-4 mr-2 btn-interview">interview</button>
+                    <button id="btn-rejected"
+                        class=" btn-rejected bg-white border-2 text-red-600 py-2 px-4">Rejected</button>
+                </div>
+            </div>
+
+
+            <!-- Main section part 3 -->
+            <div id="eSection" class="bg-white py-9 px-9 mt-6">
+                <div class="mb-3 flex justify-between ">
+                    <div>
+                        <p class=" mobileFast text-3xl font-bold">DataViz Solutions</p>
+                        <p class="reactNative">Data Visualization Specialist</p>
+                    </div>
+                    <div><i id="sectionDelete" class="fa-solid fa-trash-can hover:text-red-400 "></i></div>
+                </div>
+                <div class="mb-3">
+                    <p class="remoteFull">Boston, MA
+                        •
+                        Full-time
+                        •
+                        $125,000 - $165,000 </p>
+                </div>
+                <div class="mb-3">
+                    <button id="btn-apply" class=" status-btn bg-amber-200 py-2 px-2 mb-2 font-medium">Not
+                        Applied</button>
+                    <p class="build">Transform complex data into compelling visualizations. Required skills: D3.js,
+                        React, and strong analytical thinking.
+                    </p>
+                </div>
+                <div>
+                    <button id="btn-interview"
+                        class=" btn-interview bg-white border-2 text-green-600 py-2 px-4 mr-2 btn-interview">interview</button>
+                    <button id="btn-rejected"
+                        class=" btn-rejected bg-white border-2 text-red-600 py-2 px-4">Rejected</button>
+                </div>
+            </div>
+
+
+            <!-- Main section part 4 -->
+            <div id="eSection" class="bg-white py-9 px-9 mt-6">
+                <div class="mb-3 flex justify-between ">
+                    <div>
+                        <p class=" mobileFast text-3xl font-bold">CloudFirst Inc</p>
+                        <p class="reactNative">Backend Developer</p>
+                    </div>
+                    <div><i id="sectionDelete" class="fa-solid fa-trash-can hover:text-red-400 "></i></div>
+                </div>
+                <div class="mb-3">
+                    <p class="remoteFull">Seattle, WA
+                        •
+                        Full-time
+                        •
+                        $140,000 - $190,000 </p>
+                </div>
+                <div class="mb-3">
+                    <button id="btn-apply" class=" status-btn bg-amber-200 py-2 px-2 mb-2 font-medium">Not
+                        Applied</button>
+                    <p class="build">Design and maintain scalable backend systems using Python and AWS. Work with modern
+                        DevOps practices and cloud infrastructure.</p>
+                </div>
+                <div>
+                    <button id="btn-interview"
+                        class=" btn-interview bg-white border-2 text-green-600 py-2 px-4 mr-2 btn-interview">interview</button>
+                    <button id="btn-rejected"
+                        class=" btn-rejected bg-white border-2 text-red-600 py-2 px-4">Rejected</button>
+                </div>
+            </div>
+
+            <!-- Main section part 5 -->
+            <div id="eSection" class="bg-white py-9 px-9 mt-6">
+                <div class="mb-3 flex justify-between ">
+                    <div>
+                        <p class=" mobileFast text-3xl font-bold">Innovation Labs</p>
+                        <p class="reactNative">UI/UX Engineer</p>
+                    </div>
+                    <div><i id="sectionDelete" class="fa-solid fa-trash-can hover:text-red-400 "></i></div>
+                </div>
+                <div class="mb-3">
+                    <p class="remoteFull">Austin, TX
+                        •
+                        Full-time
+                        •
+                        $110,000 - $150,000</p>
+                </div>
+                <div class="mb-3">
+                    <button id="btn-apply" class=" status-btn bg-amber-200 py-2 px-2 mb-2 font-medium">Not
+                        Applied</button>
+                    <p class="build">Create beautiful and functional user interfaces for our suite of products. Strong
+                        design skills and frontend development expertise required.</p>
+                </div>
+                <div>
+                    <button id="btn-interview"
+                        class=" btn-interview bg-white border-2 text-green-600 py-2 px-4 mr-2 btn-interview">interview</button>
+                    <button id="btn-rejected"
+                        class=" btn-rejected bg-white border-2 text-red-600 py-2 px-4">Rejected</button>
+                </div>
+            </div>
+
+            <!-- Main section part 6 -->
+
+            <div id="eSection" class="bg-white py-9 px-9 mt-6">
+                <div class="mb-3 flex justify-between ">
+                    <div>
+                        <p class=" mobileFast text-3xl font-bold">MegaCorp Solutions</p>
+                        <p class="reactNative">JavaScript Developer</p>
+                    </div>
+                    <div><i id="sectionDelete" class="fa-solid fa-trash-can hover:text-red-400 "></i></div>
+                </div>
+                <div class="mb-3">
+                    <p class="remoteFull">New York, NY
+                        •
+                        Full-time
+                        •
+                        $130,000 - $170,00 </p>
+                </div>
+                <div class="mb-3">
+                    <button id="btn-apply" class=" status-btn bg-amber-200 py-2 px-2 mb-2 font-medium">Not
+                        Applied</button>
+                    <p class="build">Build enterprise applications with JavaScript and modern frameworks. We offer
+                        competitive compensation, health insurance, and professional development opportunities.</p>
+                </div>
+                <div>
+                    <button id="btn-interview"
+                        class=" btn-interview bg-white border-2 text-green-600 py-2 px-4 mr-2 btn-interview">interview</button>
+                    <button id="btn-rejected"
+                        class=" btn-rejected bg-white border-2 text-red-600 py-2 px-4">Rejected</button>
+                </div>
+            </div>
+            <!-- Main section part 7 -->
+            <div id="eSection" class="bg-white py-9 px-9 mt-6">
+                <div class="mb-3 flex justify-between ">
+                    <div>
+                        <p class=" mobileFast text-3xl font-bold">StartupXYZ</p>
+                        <p class="reactNative">Full Stack Engineer</p>
+                    </div>
+                    <div><i id="sectionDelete" class="fa-solid fa-trash-can hover:text-red-400 "></i></div>
+                </div>
+                <div class="mb-3">
+                    <p class="remoteFull">Remote
+                        •
+                        Full-time
+                        •
+                        $120,000 - $160,000 </p>
+                </div>
+                <div class="mb-3">
+                    <button id="btn-apply" class=" status-btn bg-amber-200 py-2 px-2 mb-2 font-medium">Not
+                        Applied</button>
+                    <p class="build">Join our fast-growing startup and work on our core platform. Experience with
+                        Node.js and React required. Great benefits and equity package included.</p>
+                </div>
+                <div>
+                    <button id="btn-interview"
+                        class=" btn-interview bg-white border-2 text-green-600 py-2 px-4 mr-2 btn-interview">interview</button>
+                    <button id="btn-rejected"
+                        class=" btn-rejected bg-white border-2 text-red-600 py-2 px-4">Rejected</button>
+                </div>
+            </div>
+
+            <!-- Main section part 8 -->
+            <div id="eSection" class="bg-white py-9 px-9 mt-6">
+                <div class="mb-3 flex justify-between ">
+                    <div>
+                        <p class=" mobileFast text-3xl font-bold">TechCorp Industries</p>
+                        <p class="reactNative">Senior Frontend Developer</p>
+                    </div>
+                    <div><i id="sectionDelete" class="fa-solid fa-trash-can hover:text-red-400 "></i></div>
+                </div>
+                <div class="mb-3">
+                    <p class="remoteFull">San Francisco, CA
+                        •
+                        Full-time
+                        •
+                        $130,000 - $175,000 </p>
+                </div>
+                <div class="mb-3">
+                    <button id="btn-apply" class=" status-btn bg-amber-200 py-2 px-2 mb-2 font-medium">Not
+                        Applied</button>
+                    <p class="build">We are looking for an experienced Frontend Developer to build scalable web
+                        applications using React and TypeScript. You will work with a talented team on cutting-edge
+                        projects.</p>
+                </div>
+                <div>
+                    <button id="btn-interview"
+                        class=" btn-interview bg-white border-2 text-green-600 py-2 px-4 mr-2 btn-interview">interview</button>
+                    <button id="btn-rejected"
+                        class=" btn-rejected bg-white border-2 text-red-600 py-2 px-4">Rejected</button>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
