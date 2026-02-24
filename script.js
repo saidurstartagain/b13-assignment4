@@ -59,3 +59,67 @@ sectionDelete.addEventListener('click', function () {
 
 })
 
+//  Function for toggoling 
+function toggleStyle(id) {
+
+    allTab.classList.remove('bg-blue-600')
+    allTab.classList.remove('text-white')
+    allTab.classList.add('text-black')
+    allTab.classList.add('bg-white', 'text-black')
+
+    interviewTab.classList.remove('bg-blue-600');
+    interviewTab.classList.remove('text-white')
+    interviewTab.classList.add('text-black')
+    interviewTab.classList.add('bg-white', 'text-black');
+
+    rejectedTab.classList.remove('bg-blue-600');
+    rejectedTab.classList.remove('text-white')
+    rejectedTab.classList.add('text-black')
+    rejectedTab.classList.add('bg-white', 'text-black');
+
+    let selected = document.getElementById(id);
+    selected.classList.remove('bg-white')
+    selected.classList.add('bg-blue-600')
+    selected.classList.remove('text-black')
+    selected.classList.add('text-white')
+
+
+    if (id == 'btn-interview-toggle') {
+
+        emptySection.classList.add('hidden')
+        allCards.classList.add('hidden');
+        filteredSection.classList.remove('hidden');
+        renderInterview()
+        if (interviewList.length == 0) {
+            emptySection.classList.remove('hidden')
+            // console.log(emptySection)
+        }
+
+    }
+    else if (id == 'btn-all-toggle') {
+        emptySection.classList.add('hidden')
+        allCards.classList.remove('hidden')
+        filteredSection.classList.add('hidden')
+        // emptySection.classList.add('hidden')
+        // console.log(emptySection)
+
+
+    }
+    else if (id == 'btn-rejected-toggle') {
+        emptySection.classList.add('hidden')
+
+
+
+        allCards.classList.add('hidden');
+        filteredSection.classList.remove('hidden');
+        renderRejection()
+        if (rejectedList.length == 0) {
+            emptySection.classList.remove('hidden')
+            // console.log(emptySection)
+        }
+    }
+    currentStatus = id
+    console.log(id)
+
+}
+
