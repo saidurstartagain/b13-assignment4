@@ -31,9 +31,9 @@
 
 <body class="bg-blue-100">
     <header class="w-[80%] mx-auto pt-6 mb-6">
-        <h2 class="text-black-400 text-4xl font-bold ">Job Application Tracker</h2>
-        <div class="grid grid-cols-3 mt-6 gap-5">
-            <div class="bg-white px-5 py-3 ">
+        <h2 class="text-black-400 text-2xl font-bold sm:text-black-200 md:text-4xl ">Job Application Tracker</h2>
+        <div class="grid grid-cols-1 mt-6 gap-5 md:grid-cols-3 ">
+            <div class="bg-white px-5 py-3  ">
                 <p>Total</p>
                 <p id="total-job" class="text-black text-3xl">8</p>
             </div>
@@ -60,11 +60,11 @@
 
         <div>
             <div class="flex justify-between">
-                <h3 class="text-3xl font-bold">Available Jobs</h3>
+                <h3 class="text-2xl font-bold md:text-3xl">Available Jobs</h3>
 
-                <p class="text-3xl"><span id="total-job-2">8</span> Jobs</p>
+                <p class="text-2xl "><span id="total-job-2">8</span> Jobs</p>
             </div>
-            <div class="mt-3">
+            <div class="max-w-150 mt-3 grid grid-cols-1 md:grid-cols-3 gap-4 ">
                 <button onclick="toggleStyle('btn-all-toggle')" id="btn-all-toggle"
                     class="bg-blue-600 text-white py-2 px-9">All</button>
                 <button onclick="toggleStyle('btn-interview-toggle')" id="btn-interview-toggle"
