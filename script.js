@@ -34,3 +34,28 @@ function totalCount() {
 
 totalCount()
 
+//  get element by of main part's header section 
+
+let allTab = document.getElementById("btn-all-toggle");
+let interviewTab = document.getElementById("btn-interview-toggle");
+let rejectedTab = document.getElementById("btn-rejected-toggle");
+
+// 
+
+let filteredSection = document.getElementById('filtered-section');
+let emptySection = document.getElementById('empty-section');
+
+// console.log(allTab, interviewTab)
+
+//  delete functions
+let sectionDelete = document.getElementById('sectionDelete')
+
+sectionDelete.addEventListener('click', function () {
+    let eSection = document.getElementById('eSection');
+    eSection.classList.add('hidden')
+    console.log(eSection)
+    alert('Successfully deleted')
+
+
+})
+
