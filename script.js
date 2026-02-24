@@ -18,4 +18,19 @@ const allCards = document.getElementById("all-cards");
 
 // console.log(totalJob, totalInterview, totalRejected)
 
-// 
+// ok
+
+function totalCount() {
+    totalJob.innerText = allCards.children.length;
+    totalJob2.innerText = allCards.children.length;
+    totalInterview.innerText = interviewList.length;
+    totalRejected.innerText = rejectedList.length;
+    // console.log(interviewList.length)
+    // console.log(rejectedList.length)
+
+    // console.log(typeof (totalJobAll1))
+}
+
+
+totalCount()
+
