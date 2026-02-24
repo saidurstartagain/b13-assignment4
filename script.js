@@ -200,3 +200,42 @@ mainContainer.addEventListener('click', function (event) {
 })
 
 // Filter section rending and document get ..
+
+function renderInterview() {
+    filteredSection.innerHTML = '';
+    for (let interView of interviewList) {
+        let div = document.createElement('div');
+        // div.className = 'card flex justify-between border-2 p-4';
+        div.innerHTML = `
+         
+   <!-- Main section part 1 -->
+            <div id="eSection" class="bg-white py-9 px-9 mt-6">
+                <div class="mb-3 flex justify-between ">
+                    <div>
+                        <p class=" mobileFast text-3xl font-bold">${interView.mobileFast}</p>
+                        <p class="reactNative">${interView.reactNative}</p>
+                    </div>
+                    <div><i id="sectionDelete" class="fa-solid fa-trash-can hover:text-red-400 "></i></div>
+                </div>
+                <div class="mb-3">
+                    <p class="remoteFull">${interView.remoteFull} </p>
+                </div>
+                <div class="mb-3">
+                    <button id="btn-apply" class=" status-btn bg-amber-200 py-2 px-2 mb-2 font-medium">
+                        ${interView.status} </button>
+                    <p class="build">${interView.build}</p>
+                </div>
+                <div>
+                    <button id="btn-interview"
+                        class=" btn-interview bg-white border-2 text-green-600 py-2 px-4 mr-2 btn-interview">interview</button>
+                    <button id="btn-rejected"
+                        class=" btn-rejected bg-white border-2 text-red-600 py-2 px-4">Rejected</button>
+                </div>
+            </div>
+                
+                    
+
+        `;
+        filteredSection.appendChild(div);
+    }
+}
